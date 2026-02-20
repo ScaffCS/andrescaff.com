@@ -152,7 +152,7 @@ export default function PortfolioPage() {
                 Trajetória em Produto
               </h2>
               <p className="text-sm text-text-secondary">
-                Resumos de alto nível — sem dados confidenciais.
+                Plataformas, integrações e estratégia de produto em B2B SaaS.
               </p>
             </div>
           </div>
@@ -213,7 +213,7 @@ export default function PortfolioPage() {
                 Projetos com IA & Code
               </h2>
               <p className="text-sm text-text-secondary">
-                Construído com as mãos na massa usando ferramentas de IA.
+                Produtos construídos do zero com IA generativa.
               </p>
             </div>
           </div>

@@ -178,15 +178,7 @@ export default function SobrePage() {
           <div className="grid gap-12 md:grid-cols-2 items-center">
             {/* Photo placeholder */}
             <div className="relative aspect-[4/5] rounded-2xl border border-border-subtle bg-bg-secondary overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-text-muted">
-                  <GraduationCap
-                    size={48}
-                    className="mx-auto mb-3 opacity-30"
-                  />
-                  <p className="text-sm">Foto em breve</p>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,212,170,0.05)_0%,_transparent_70%)]" />
               <div className="absolute -bottom-2 -right-2 h-24 w-24 rounded-full bg-accent-teal/10 blur-2xl" />
             </div>
 
