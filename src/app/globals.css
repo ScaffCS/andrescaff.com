@@ -1,30 +1,32 @@
 @import "tailwindcss";
 
 /* ============================================
-   Scaff Design Tokens
-   Based on proposta-marca-scaff-v3.md
+   Scaff Design Tokens — Warm Maker (Light Mode)
+   Stone palette + Teal accent + Indigo AI accent
    ============================================ */
 
 :root {
   /* Background */
-  --bg-primary: #0F1117;
-  --bg-secondary: #1A1D27;
-  --bg-card: #1E2130;
+  --bg-primary: #FAFAF9;
+  --bg-secondary: #F5F5F4;
+  --bg-card: #FFFFFF;
 
   /* Text */
-  --text-primary: #E8E8ED;
-  --text-secondary: #8B8FA3;
-  --text-muted: #5C6078;
+  --text-primary: #1C1917;
+  --text-secondary: #78716C;
+  --text-muted: #A8A29E;
 
-  /* Brand */
-  --accent-teal: #00D4AA;
-  --accent-teal-hover: #00E8BB;
-  --accent-amber: #F5A623;
-  --accent-amber-hover: #FFBA42;
+  /* Accent — Teal (organic, warm) */
+  --accent-teal: #0D9488;
+  --accent-teal-hover: #0F766E;
+
+  /* Accent — Indigo (AI/code) */
+  --accent-indigo: #6366F1;
+  --accent-indigo-hover: #4F46E5;
 
   /* Borders */
-  --border-subtle: #2A2D3A;
-  --border-hover: #3A3D4A;
+  --border-subtle: #E7E5E4;
+  --border-hover: #D6D3D1;
 
   /* Foreground/Background shortcuts */
   --background: var(--bg-primary);
@@ -46,8 +48,8 @@
 
   --color-accent-teal: var(--accent-teal);
   --color-accent-teal-hover: var(--accent-teal-hover);
-  --color-accent-amber: var(--accent-amber);
-  --color-accent-amber-hover: var(--accent-amber-hover);
+  --color-accent-indigo: var(--accent-indigo);
+  --color-accent-indigo-hover: var(--accent-indigo-hover);
 
   --color-border-subtle: var(--border-subtle);
   --color-border-hover: var(--border-hover);
@@ -55,6 +57,8 @@
   /* Fonts */
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
+  --font-heading: var(--font-sora);
+  --font-handwriting: var(--font-caveat);
 }
 
 body {
@@ -71,7 +75,12 @@ html {
 /* Selection color */
 ::selection {
   background: var(--accent-teal);
-  color: var(--bg-primary);
+  color: white;
+}
+
+/* Headings use Sora */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
 }
 
 /* ============================================
@@ -111,17 +120,14 @@ html {
 .stagger-6 { animation-delay: 500ms; }
 
 /* ============================================
-   Subtle grid background for depth
+   Card hover lift
    ============================================ */
 
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 64px 64px;
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Glow effect for accent elements */
-.glow-teal {
-  box-shadow: 0 0 20px rgba(0, 212, 170, 0.15);
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.08), 0 4px 10px -6px rgba(0, 0, 0, 0.04);
 }

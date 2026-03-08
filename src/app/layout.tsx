@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Sora, Caveat } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { TranslationProvider } from "@/lib/translation-context";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,25 +15,35 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "André Scaff — Product Leader, Mentor & Builder",
+  title: "André Scaff — Product Manager & AI Builder",
   description:
-    "Product leader, mentor e builder. 9+ anos em tecnologia, 7+ em produto, 250+ startups mentoreadas. Ajudo fundadores e empresas a pensar junto e construir na prática.",
+    "Product Manager & AI Builder. 9+ years in tech, 7+ in product, 250+ startups mentored. Building real products with AI.",
   metadataBase: new URL("https://andrescaff.com"),
   openGraph: {
-    title: "André Scaff — Product Leader, Mentor & Builder",
+    title: "André Scaff — Product Manager & AI Builder",
     description:
-      "Product leader, mentor e builder. Ajudo fundadores e empresas a pensar junto e construir na prática.",
+      "Product Manager & AI Builder. 9+ years in tech, 7+ in product. Building real products with AI.",
     url: "https://andrescaff.com",
     siteName: "André Scaff",
-    locale: "pt_BR",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "André Scaff — Product Leader, Mentor & Builder",
+    title: "André Scaff — Product Manager & AI Builder",
     description:
-      "Product leader, mentor e builder. Ajudo fundadores e empresas a pensar junto e construir na prática.",
+      "Product Manager & AI Builder. 9+ years in tech, 7+ in product. Building real products with AI.",
   },
   robots: {
     index: true,
@@ -46,13 +57,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} ${sora.variable} ${caveat.variable} antialiased`}
       >
-        <Header />
-        <main className="pt-[73px]">{children}</main>
-        <Footer />
+        <TranslationProvider>
+          <Header />
+          <main className="pt-[73px]">{children}</main>
+          <Footer />
+        </TranslationProvider>
       </body>
     </html>
   );

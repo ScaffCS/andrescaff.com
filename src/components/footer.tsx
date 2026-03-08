@@ -1,46 +1,50 @@
+"use client";
+
 import Link from "next/link";
 import { Linkedin, Github, Mail } from "lucide-react";
+import { useTranslation } from "@/hooks/use-translation";
 
 export function Footer() {
+  const { t, translations } = useTranslation();
+  const f = translations.footer;
+
   return (
-    <footer className="border-t border-border-subtle/50 bg-bg-secondary">
-      <div className="mx-auto max-w-6xl px-6 py-12">
+    <footer className="border-t border-stone-200 bg-stone-50">
+      <div className="mx-auto max-w-5xl px-6 py-12">
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
           {/* Logo + tagline */}
           <div>
-            <span className="text-lg font-bold tracking-tight text-text-primary">
-              scaff<span className="text-accent-teal">.</span>
+            <span className="text-lg font-[family-name:var(--font-sora)] font-bold tracking-tight text-stone-900">
+              scaff<span className="text-teal-600">.</span>
             </span>
-            <p className="mt-1 text-sm text-text-muted">
-              Product leader, mentor & builder.
-            </p>
+            <p className="mt-1 text-sm text-stone-400">{t(f.tagline)}</p>
           </div>
 
           {/* Nav */}
           <nav className="flex gap-8">
             <Link
-              href="/portfolio"
-              className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+              href="/work"
+              className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
             >
-              Portfólio
+              {t(translations.nav.work)}
             </Link>
             <Link
-              href="/sobre"
-              className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+              href="/about"
+              className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
             >
-              Sobre
+              {t(translations.nav.about)}
             </Link>
             <Link
-              href="/consultoria"
-              className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+              href="/now"
+              className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
             >
-              Consultoria
+              {t(translations.nav.now)}
             </Link>
             <Link
-              href="/contato"
-              className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+              href="/contact"
+              className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
             >
-              Contato
+              {t(translations.nav.contact)}
             </Link>
           </nav>
 
@@ -50,7 +54,7 @@ export function Footer() {
               href="https://linkedin.com/in/andrescaff"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-muted hover:text-accent-teal transition-colors"
+              className="text-stone-400 hover:text-teal-600 transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
@@ -59,14 +63,14 @@ export function Footer() {
               href="https://github.com/ScaffCS"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-muted hover:text-accent-teal transition-colors"
+              className="text-stone-400 hover:text-teal-600 transition-colors"
               aria-label="GitHub"
             >
               <Github size={20} />
             </a>
             <a
               href="mailto:contato@andrescaff.com"
-              className="text-text-muted hover:text-accent-teal transition-colors"
+              className="text-stone-400 hover:text-teal-600 transition-colors"
               aria-label="Email"
             >
               <Mail size={20} />
@@ -74,10 +78,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-border-subtle/50 pt-6 text-center">
-          <p className="text-xs text-text-muted">
-            &copy; {new Date().getFullYear()} André Scaff. Todos os direitos
-            reservados.
+        <div className="mt-8 border-t border-stone-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-stone-400">
+            &copy; {new Date().getFullYear()} {t(f.rights)}
+          </p>
+          <p className="text-xs text-stone-400 flex items-center gap-1.5">
+            {t(f.builtWith)}{" "}
+            <span className="font-[family-name:var(--font-jetbrains-mono)] text-indigo-500">
+              Claude Code
+            </span>
           </p>
         </div>
       </div>
