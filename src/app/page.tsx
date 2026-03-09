@@ -119,22 +119,50 @@ export default function HomePage() {
           </h2>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {h.featuredProjects.map((project, i) => (
-              <div
-                key={i}
-                className="card-lift rounded-xl bg-white p-6 shadow-sm border border-stone-100 group cursor-pointer"
-              >
-                <h3 className="font-[family-name:var(--font-sora)] font-semibold text-stone-900 group-hover:text-teal-600 transition-colors">
-                  {t(project.title)}
-                </h3>
-                <p className="mt-2 text-sm text-stone-500 leading-relaxed">
-                  {t(project.description)}
-                </p>
-                <p className="mt-3 text-xs font-[family-name:var(--font-jetbrains-mono)] text-stone-400">
-                  {t(project.meta)}
-                </p>
-              </div>
-            ))}
+            {h.featuredProjects.map((project, i) => {
+              const link = "link" in project ? (project.link as string) : "";
+              const logo = "logo" in project ? (project.logo as string) : "";
+
+              const cardContent = (
+                <>
+                  {logo && (
+                    <img
+                      src={logo}
+                      alt={t(project.title)}
+                      className="h-5 mb-3"
+                    />
+                  )}
+                  <h3 className="font-[family-name:var(--font-sora)] font-semibold text-stone-900 group-hover:text-teal-600 transition-colors">
+                    {t(project.title)}
+                  </h3>
+                  <p className="mt-2 text-sm text-stone-500 leading-relaxed">
+                    {t(project.description)}
+                  </p>
+                  <p className="mt-3 text-xs font-[family-name:var(--font-jetbrains-mono)] text-stone-400">
+                    {t(project.meta)}
+                  </p>
+                </>
+              );
+
+              const cardClasses =
+                "block card-lift rounded-xl bg-white p-6 shadow-sm border border-stone-100 group cursor-pointer";
+
+              return link ? (
+                <a
+                  key={i}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClasses}
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div key={i} className={cardClasses}>
+                  {cardContent}
+                </div>
+              );
+            })}
           </div>
 
           <Link

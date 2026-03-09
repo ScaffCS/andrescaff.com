@@ -49,12 +49,14 @@ export const translations = {
     viewAllWork: { en: "See all work", pt: "Ver tudo" },
     featuredProjects: [
       {
-        title: { en: "TMS Enterprise Platform", pt: "Plataforma TMS Enterprise" },
+        title: { en: "ShipperGuide", pt: "ShipperGuide" },
         description: {
-          en: "Product strategy for Loadsmart's TMS platform, used by some of the largest shippers in the US. Focused on profitability and enterprise adoption.",
-          pt: "Estratégia de produto para a plataforma TMS da Loadsmart, usada por alguns dos maiores embarcadores dos EUA. Foco em rentabilidade e adoção enterprise.",
+          en: "Leading a Pre-PMF Mid-market TMS team, coordinating GTM efforts and Product strategy.",
+          pt: "Liderando um time de TMS Mid-market Pre-PMF, coordenando esforços de GTM e estratégia de Produto.",
         },
         meta: { en: "Loadsmart · Staff PM", pt: "Loadsmart · Staff PM" },
+        link: "https://shipperguide.com/",
+        logo: "/shipperguide-logo.svg",
       },
       {
         title: { en: "Life-OS", pt: "Life-OS" },
@@ -81,12 +83,14 @@ export const translations = {
 
     projects: [
       {
-        title: { en: "TMS Enterprise Platform", pt: "Plataforma TMS Enterprise" },
+        title: { en: "ShipperGuide", pt: "ShipperGuide" },
         subtitle: { en: "Loadsmart · Staff PM", pt: "Loadsmart · Staff PM" },
         description: {
-          en: "Defining product strategy and the path to profitability for Loadsmart's TMS, used by major enterprise shippers in the US. Leading a team of up to 30 across product and operations, with focus on enterprise integrations and roadmap alignment.",
-          pt: "Definindo estratégia de produto e o caminho para rentabilidade do TMS da Loadsmart, usado por grandes embarcadores nos EUA. Liderando um time de até 30 pessoas entre produto e operações, com foco em integrações enterprise e alinhamento de roadmap.",
+          en: "Leading a Pre-PMF Mid-market TMS team, coordinating GTM efforts and Product strategy.",
+          pt: "Liderando um time de TMS Mid-market Pre-PMF, coordenando esforços de GTM e estratégia de Produto.",
         },
+        link: "https://shipperguide.com/",
+        logo: "/shipperguide-logo.svg",
       },
       {
         title: { en: "Fleet Programs", pt: "Programas de Frota" },
