@@ -26,14 +26,14 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "André Scaff — Product Manager & AI Builder",
+  title: "André Scaff — Product Manager",
   description:
-    "Product Manager & AI Builder. 9+ years in tech, 7+ in product, 250+ startups mentored. Building real products with AI.",
+    "Staff Product Manager at Loadsmart. 9 years in tech, 7 in product. Based in Blumenau, Brazil.",
   metadataBase: new URL("https://andrescaff.com"),
   openGraph: {
-    title: "André Scaff — Product Manager & AI Builder",
+    title: "André Scaff — Product Manager",
     description:
-      "Product Manager & AI Builder. 9+ years in tech, 7+ in product. Building real products with AI.",
+      "Staff Product Manager at Loadsmart. 9 years in tech, 7 in product. Based in Blumenau, Brazil.",
     url: "https://andrescaff.com",
     siteName: "André Scaff",
     locale: "en_US",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "André Scaff — Product Manager & AI Builder",
+    title: "André Scaff — Product Manager",
     description:
-      "Product Manager & AI Builder. 9+ years in tech, 7+ in product. Building real products with AI.",
+      "Staff Product Manager at Loadsmart. 9 years in tech, 7 in product. Based in Blumenau, Brazil.",
   },
   robots: {
     index: true,
