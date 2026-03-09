@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     description:
       "Staff Product Manager at Loadsmart. 9 years in tech, 7 in product. Based in Blumenau, Brazil.",
   },
+  icons: {
+    icon: "/icon.svg",
+  },
   robots: {
     index: true,
     follow: true,
