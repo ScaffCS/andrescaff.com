@@ -3,17 +3,7 @@
 import Link from "next/link";
 import { useTranslation } from "@/hooks/use-translation";
 import { useEffect } from "react";
-import {
-  BarChart3,
-  Monitor,
-  Users,
-  Globe,
-  ChevronRight,
-  Star,
-  Briefcase,
-} from "lucide-react";
-
-const capabilityIcons = [BarChart3, Monitor, Users, Globe];
+import { ChevronRight } from "lucide-react";
 
 export default function HomePage() {
   const { t, translations, locale } = useTranslation();
@@ -82,11 +72,7 @@ export default function HomePage() {
                 {t(h.bio1)}
               </p>
               <p className="mt-3 text-lg text-stone-600 leading-relaxed">
-                {t(h.bio2)}{" "}
-                <span className="font-medium text-stone-800">
-                  {t(h.bio2Company)}
-                </span>
-                {t(h.bio2Rest)}
+                {t(h.bio2)}
               </p>
 
               {/* Social links */}
@@ -146,159 +132,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ WHAT I DO ============ */}
-      <section className="py-20 px-6 bg-stone-100/50">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-[family-name:var(--font-jetbrains-mono)] text-teal-600 tracking-wider uppercase mb-2">
-            {t(h.whatIDo)}
-          </p>
-          <h2 className="font-[family-name:var(--font-sora)] text-2xl sm:text-3xl font-bold text-stone-900">
-            {t(h.whatIDoHeadline)}
-          </h2>
-
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {h.capabilities.map((cap, i) => {
-              const Icon = capabilityIcons[i];
-              const isAI = i === 1;
-              return (
-                <div
-                  key={i}
-                  className="card-lift rounded-xl bg-white p-5 shadow-sm border border-stone-100"
-                >
-                  <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-lg mb-4 ${
-                      isAI ? "bg-indigo-500/10" : "bg-teal-600/10"
-                    }`}
-                  >
-                    <Icon
-                      className={`w-5 h-5 ${isAI ? "text-indigo-500" : "text-teal-600"}`}
-                    />
-                  </div>
-                  <h3 className="font-[family-name:var(--font-sora)] font-semibold text-stone-900">
-                    {t(cap.title)}
-                  </h3>
-                  <p className="mt-1.5 text-sm text-stone-500 leading-relaxed">
-                    {t(cap.description)}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ============ FEATURED WORK ============ */}
+      {/* ============ WORK ============ */}
       <section className="py-20 px-6">
         <div className="mx-auto max-w-5xl">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <p className="text-sm font-[family-name:var(--font-jetbrains-mono)] text-teal-600 tracking-wider uppercase mb-2">
-                {t(h.featuredWork)}
-              </p>
-              <h2 className="font-[family-name:var(--font-sora)] text-2xl sm:text-3xl font-bold text-stone-900">
-                {t(h.featuredWorkHeadline)}
-              </h2>
-            </div>
-            <Link
-              href="/work"
-              className="hidden sm:inline-flex items-center gap-1.5 text-sm text-stone-500 hover:text-teal-600 transition-colors"
-            >
-              {t(h.viewAllWork)}
-              <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <h2 className="font-[family-name:var(--font-sora)] text-2xl sm:text-3xl font-bold text-stone-900 mb-10">
+            {t(h.featuredWorkHeadline)}
+          </h2>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {h.featuredProjects.map((project, i) => {
-              const isAI = i === 1;
-              return (
-                <div
-                  key={i}
-                  className="card-lift rounded-xl bg-white p-6 shadow-sm border border-stone-100 group cursor-pointer"
-                >
-                  <div className="flex items-center gap-2 mb-4">
-                    <span
-                      className={`text-xs font-[family-name:var(--font-jetbrains-mono)] px-2 py-0.5 rounded-md ${
-                        isAI
-                          ? "text-indigo-500 bg-indigo-500/5"
-                          : "text-teal-600 bg-teal-600/5"
-                      }`}
-                    >
-                      {t(project.tag)}
-                    </span>
-                  </div>
-                  <h3
-                    className={`font-[family-name:var(--font-sora)] font-semibold text-stone-900 transition-colors ${
-                      isAI
-                        ? "group-hover:text-indigo-500"
-                        : "group-hover:text-teal-600"
-                    }`}
-                  >
-                    {t(project.title)}
-                  </h3>
-                  <p className="mt-2 text-sm text-stone-500 leading-relaxed">
-                    {t(project.description)}
-                  </p>
-                  {"meta" in project && project.meta && (
-                    <p className="mt-3 text-xs font-[family-name:var(--font-jetbrains-mono)] text-stone-400">
-                      {t(project.meta)}
-                    </p>
-                  )}
-                  {"stack" in project && project.stack && (
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {project.stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs font-[family-name:var(--font-jetbrains-mono)] text-stone-400 bg-stone-100 px-2 py-0.5 rounded"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+            {h.featuredProjects.map((project, i) => (
+              <div
+                key={i}
+                className="card-lift rounded-xl bg-white p-6 shadow-sm border border-stone-100 group cursor-pointer"
+              >
+                <h3 className="font-[family-name:var(--font-sora)] font-semibold text-stone-900 group-hover:text-teal-600 transition-colors">
+                  {t(project.title)}
+                </h3>
+                <p className="mt-2 text-sm text-stone-500 leading-relaxed">
+                  {t(project.description)}
+                </p>
+                <p className="mt-3 text-xs font-[family-name:var(--font-jetbrains-mono)] text-stone-400">
+                  {t(project.meta)}
+                </p>
+              </div>
+            ))}
           </div>
 
           <Link
             href="/work"
-            className="mt-6 inline-flex items-center gap-1.5 text-sm text-stone-500 hover:text-teal-600 transition-colors sm:hidden"
+            className="mt-8 inline-flex items-center gap-1.5 text-sm text-stone-500 hover:text-teal-600 transition-colors"
           >
             {t(h.viewAllWork)}
             <ChevronRight className="w-4 h-4" />
           </Link>
-        </div>
-      </section>
-
-      {/* ============ CREDENTIALS ============ */}
-      <section className="py-16 px-6 bg-stone-100/50">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {h.credentials.map((cred, i) => (
-              <div key={i} className="text-center">
-                <span className="block font-[family-name:var(--font-sora)] text-3xl sm:text-4xl font-bold text-teal-600">
-                  {cred.number}
-                </span>
-                <span className="mt-1 block text-sm text-stone-500">
-                  {t(cred.label)}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-stone-400">
-            {h.badges.map((badge, i) => (
-              <div key={i} className="flex items-center gap-2">
-                {i === 0 ? (
-                  <Star className="w-4 h-4 text-teal-600" />
-                ) : (
-                  <Briefcase className="w-4 h-4 text-teal-600" />
-                )}
-                {t(badge)}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </>

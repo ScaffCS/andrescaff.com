@@ -10,21 +10,11 @@ export default function ContactPage() {
   return (
     <section className="pt-12 pb-20 px-6">
       <div className="mx-auto max-w-3xl">
-        <p className="text-sm font-[family-name:var(--font-jetbrains-mono)] text-teal-600 tracking-wider uppercase mb-3">
-          Contact
-        </p>
         <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-stone-900">
           {t(c.title)}
-          <span className="text-teal-600">.</span>
         </h1>
-        <p className="mt-4 text-lg text-stone-500">{t(c.subtitle)}</p>
 
-        {/* Handwritten note */}
-        <p className="mt-2 font-[family-name:var(--font-caveat)] text-lg text-teal-600">
-          {t(c.replyNote)}
-        </p>
-
-        {/* Contact cards */}
+        {/* Contact links */}
         <div className="mt-12 space-y-4">
           {/* LinkedIn */}
           <a
@@ -44,28 +34,12 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="font-semibold text-stone-900 group-hover:text-teal-600 transition-colors">
-                {t(c.linkedin.title)}
+                {t(c.linkedin.label)}
               </p>
-              <p className="text-sm text-stone-500">
-                {t(c.linkedin.description)}
-              </p>
-              <p className="text-xs font-[family-name:var(--font-jetbrains-mono)] text-stone-400 mt-0.5">
-                /in/andrescaff
+              <p className="text-sm font-[family-name:var(--font-jetbrains-mono)] text-stone-400 mt-0.5">
+                {c.linkedin.handle}
               </p>
             </div>
-            <svg
-              className="w-5 h-5 text-stone-300 group-hover:text-teal-600 ml-auto transition-colors"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
           </a>
 
           {/* GitHub */}
@@ -86,28 +60,12 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="font-semibold text-stone-900 group-hover:text-teal-600 transition-colors">
-                {t(c.github.title)}
+                {t(c.github.label)}
               </p>
-              <p className="text-sm text-stone-500">
-                {t(c.github.description)}
-              </p>
-              <p className="text-xs font-[family-name:var(--font-jetbrains-mono)] text-stone-400 mt-0.5">
-                @ScaffCS
+              <p className="text-sm font-[family-name:var(--font-jetbrains-mono)] text-stone-400 mt-0.5">
+                {c.github.handle}
               </p>
             </div>
-            <svg
-              className="w-5 h-5 text-stone-300 group-hover:text-teal-600 ml-auto transition-colors"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
           </a>
 
           {/* Email */}
@@ -132,43 +90,22 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="font-semibold text-stone-900 group-hover:text-teal-600 transition-colors">
-                {t(c.email.title)}
+                {t(c.email.label)}
               </p>
-              <p className="text-sm text-stone-500">
-                {t(c.email.description)}
-              </p>
-              <p className="text-xs font-[family-name:var(--font-jetbrains-mono)] text-stone-400 mt-0.5">
-                contato@andrescaff.com
+              <p className="text-sm font-[family-name:var(--font-jetbrains-mono)] text-stone-400 mt-0.5">
+                {c.email.handle}
               </p>
             </div>
-            <svg
-              className="w-5 h-5 text-stone-300 group-hover:text-teal-600 ml-auto transition-colors"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
           </a>
 
-          {/* Location (not a link) */}
+          {/* Location */}
           <div className="flex items-center gap-4 rounded-xl bg-white p-5 shadow-sm border border-stone-100">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-stone-100">
               <MapPin className="w-6 h-6 text-stone-500" />
             </div>
-            <div>
-              <p className="font-semibold text-stone-900">
-                {t(c.location.city)}
-              </p>
-              <p className="text-sm text-stone-500">
-                {t(c.location.detail)}
-              </p>
-            </div>
+            <p className="font-semibold text-stone-900">
+              {t(c.location)}
+            </p>
           </div>
         </div>
       </div>
