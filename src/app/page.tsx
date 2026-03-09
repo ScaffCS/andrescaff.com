@@ -28,34 +28,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 items-center">
             {/* Photo */}
-            <div className="relative order-2 md:order-1">
-              <div className="aspect-[4/5] rounded-2xl bg-stone-200 overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <svg
-                      className="w-16 h-16 mx-auto text-stone-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                      />
-                    </svg>
-                    <p className="mt-2 text-sm text-stone-400">
-                      {t(h.photoAlt)}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* Handwritten annotation */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                <span className="font-[family-name:var(--font-caveat)] text-xl text-teal-600 inline-block">
-                  {t(h.thatsMe)}
-                </span>
+            <div className="order-2 md:order-1">
+              <div className="aspect-square rounded-2xl bg-stone-200 overflow-hidden relative">
+                <img
+                  src="/andre-hero.jpg"
+                  alt="André Scaff"
+                  className="absolute inset-0 w-full h-full object-cover object-[40%_65%] scale-[1.6] origin-[40%_65%]"
+                />
               </div>
             </div>
 
